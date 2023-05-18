@@ -17,7 +17,7 @@ interface UserDao {
     @Update
     fun updateUser(user: User)
 
-    @Query("select * from user")
-    fun findUser()
+    @Query("select * from user where login = :l and password = :p")
+    fun findUserByLogin(l:String, p:String)
 
 }
